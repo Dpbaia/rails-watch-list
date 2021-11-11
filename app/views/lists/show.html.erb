@@ -1,0 +1,33 @@
+<h1><%= @list.name %></h1>
+
+<p>
+<%= link_to "Add new movie to #{@list.name}?", new_list_bookmark_path(params[:id]) %>
+</p>
+
+<% @list.bookmarks.each do |bookmark| %>
+    <%= bookmark.comment %>
+<% end %>
+
+
+<div class="container-postercards">
+  <% @list.movies.each do |movie| %>
+
+  <a href="https://www.rottentomatoes.com/m/<%=movie.title.split.join("_")%>">
+  <div class="poster-card">
+    <div class="poster-image">
+      <%= image_tag movie.poster_url, alt: "poster", width: 300, height: 150 %>
+    </div>
+    <div class="headline-card margin-card">
+      <h4><%= movie.title %> <%= movie.rating %></h4>
+    </div>
+    <div class="overview-card margin-card">
+      <%= movie.overview%>
+
+    </div>
+  </div>
+  </a>
+  <% end %>
+  <% @list.bookmarks.each do |bookmark| %>
+    <%= link_to "Delete this bookmark?", bookmark_path(bookmark), method: :delete %>
+  <% end %>
+</div>
