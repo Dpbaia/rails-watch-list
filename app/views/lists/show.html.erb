@@ -11,7 +11,6 @@
 
 <div class="container-postercards">
   <% @list.movies.each do |movie| %>
-
   <a href="https://www.rottentomatoes.com/m/<%=movie.title.split.join("_")%>">
   <div class="poster-card">
     <div class="poster-image">
@@ -27,7 +26,22 @@
   </div>
   </a>
   <% end %>
-  <% @list.bookmarks.each do |bookmark| %>
-    <%= link_to "Delete this bookmark?", bookmark_path(bookmark), method: :delete %>
-  <% end %>
 </div>
+
+<% @list.bookmarks.each do |bookmark| %>
+<div class="link-delete">
+  <%= link_to "Delete #{bookmark.movie.title}?", bookmark_path(bookmark), method: :delete %>
+</div>
+<% end %>
+
+  <%# From the live code?
+  plant_tag_path(tag), method: :delete
+
+  def destroy
+    @plant_tag = PlantTag.find(params[:id])
+    (............ see from slack)
+    @garden = @plant.garden
+    if @plant_tag.destroy
+      redirect_to garden_plant_path(@garden, @plant)
+    end
+  end%>
