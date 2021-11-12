@@ -3,32 +3,41 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 @import "components/card";
+@import "components/button";
+@import "components/banner";
+
+
+$beige: #FCD0A1;
 
 h1 {
-  font-family: Georgia;
+  font-family: 'Lora', serif;
   font-size: 4em;
   text-align: center;
 }
 
 h2 {
   text-align: center;
+  font-family: 'Oxygen', serif;
   padding: 30px 20px;
   margin: 20px 50px ;
-  background-color: blanchedalmond;
+  background-color: $beige;
+  color: white;
   box-shadow: 2px 2px 10px black;
-  a {
+}
+
+a {
+  text-decoration: none;
+  color: darkgray;
+  &:hover{
     text-decoration: none;
-    color: darkgray;
-    &:hover{
-      text-decoration: none;
-      color: black
-    }
+    color: black
   }
 }
 
 
 h4 {
   font-weight: bold;
+  font-size: 20px;
 }
 
 @media screen and (min-width: 1000px) {

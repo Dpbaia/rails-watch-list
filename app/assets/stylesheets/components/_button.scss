@@ -1,0 +1,20 @@
+.btn-blackshadow {
+  text-align: center;
+  margin-top: 50px;
+
+  a{
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 10px 10px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px grey;
+  transition: 1s;
+  }
+
+  a:hover {
+  box-shadow: none;
+  color: lightgray;
+  }
+}

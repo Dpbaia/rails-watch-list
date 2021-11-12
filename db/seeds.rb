@@ -11,13 +11,16 @@
 # Movie.create(title: "Titanic", overview: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic.", poster_url: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", rating: 7.9)
 # Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
 
-
-10.times do
+p 'Creating new movies...'
+20.times do
   title = Faker::Movie.title
   Movie.create(
     title: title,
-    overview: Faker::Quote.famous_last_words,
+    overview: Faker::GreekPhilosophers.quote,
     poster_url: "https://source.unsplash.com/1600x900/?#{title}",
     rating: (1..10).to_a.sample
   )
+  p "Created #{title}"
 end
+
+p 'Finished seeding'

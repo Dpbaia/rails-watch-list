@@ -1,3 +1,10 @@
+$beige: #cfb08fe5;
+$blue: #36409D;
+$red: #5A2A27;
+$lilac: #a690a4;
+$grey: #5c574f;
+
+
 .container-postercards {
   display: inline-grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -9,19 +16,40 @@
   margin-top: 10px;
 
   a {
+    font-size: 14px;
     text-decoration: none;
-    color: black
+    color: white;
+    background-color: $red;
+    padding: 10px 10px;
+    border-radius: 25px;
+    position: relative;
+    left: 220px;
+    top: 350px;
+    box-shadow: 5px 5px 10px $red;
+    transition: 1s;
   }
+
+  p {
+    font-size: 12px;
+  }
+
+
+}
+
+
+.container-postercards a:hover {
+  box-shadow: none;
+  color: $grey;
 }
 
 
 
 .poster-card {
   width: 300px;
-  height: 350px;
+  height: 400px;
   border-radius: 15px;
-  background-color: rgba(200, 200, 200, 0.8);
-  box-shadow: 4px 4px 10px black;
+  background-color: $beige;
+  box-shadow: 4px 4px 10px $red;
 
   &:hover {
     .poster-image {
@@ -51,6 +79,9 @@
   padding: 20px 30px;
 }
 
+#btn-blackbottom {
+  display: flex;
+}
 
 @media screen and (min-width: 450px) {
   .container-postercards {
