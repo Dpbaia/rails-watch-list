@@ -1,11 +1,13 @@
 <div id="banner">
   <h1>All Lists</h1>
 </div>
+<div class="container-list">
   <div>
     <% @lists.each do |list| %>
       <h2> <%= link_to list.name, list_path(list) %></h2>
     <% end%>
-  <div class="btn-blackshadow">
-    <%= link_to "Create a new list?", new_list_path %>
+    <div class="btn-blackshadow">
+      <%= link_to "Create a new list?", new_list_path %>
+    </div>
   </div>
 </div>

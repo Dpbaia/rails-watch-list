@@ -2,29 +2,32 @@
 
 
 
+<div class="container-list">
+  <div></div>
+  <div class="container-postercards">
+    <% @list.movies.each do |movie| %>
+    <div class="poster-card">
+        <% movie.bookmarks.each do |bookmark| %>
+          <div>
+            <%= link_to "Delete?", bookmark_path(bookmark), method: :delete, data: {confirm: "Are you sure you want to delete #{movie.title} from this list?"} %>
+          </div>
+      <div class="poster-image">
+        <%= image_tag movie.poster_url, alt: "poster", width: 300, height: 150 %>
+      </div>
+      <div class="headline-card margin-card">
+        <h4><%= movie.title %></h4>
+        <p>Rating: <%= movie.rating %></p>
+      </div>
+      <div class="overview-card margin-card">
+        <p><%= movie.overview%></p>
+        <p> <%= bookmark.comment%> </p>
+      </div>
+        <% end %>
 
-<div class="container-postercards">
-  <% @list.movies.each do |movie| %>
-  <div class="poster-card">
-      <% movie.bookmarks.each do |bookmark| %>
-        <div>
-          <%= link_to "Delete?", bookmark_path(bookmark), method: :delete, data: {confirm: "Are you sure you want to delete #{movie.title} from this list?"} %>
-        </div>
-    <div class="poster-image">
-      <%= image_tag movie.poster_url, alt: "poster", width: 300, height: 150 %>
     </div>
-    <div class="headline-card margin-card">
-      <h4><%= movie.title %></h4>
-      <p>Rating: <%= movie.rating %></p>
-    </div>
-    <div class="overview-card margin-card">
-      <p><%= movie.overview%></p>
-       <p> <%= bookmark.comment%> </p>
-    </div>
-      <% end %>
-
+    <% end %>
   </div>
-  <% end %>
+  <div></div>
 </div>
 
 <p>
