@@ -19,8 +19,8 @@
         <p>Rating: <%= movie.rating %></p>
       </div>
       <div class="overview-card margin-card card-display">
-        <% if movie.overview.split.length >= 50 %>
-          <p><%= movie.overview.split[0..50].join(" ")%> (...)</p>
+        <% if movie.overview.split.length >= 32 %>
+          <p><%= movie.overview.split[0..32].join(" ")%> (...)</p>
         <% else %>
           <p><%= movie.overview%></p>
         <% end %>
