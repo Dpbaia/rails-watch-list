@@ -1,11 +1,13 @@
 <div id="banner">
-  <h1>MyMovies</h1>
-  <h3>Create anonymous lists to store your movies</h3>
+  <h1>Our Movies</h1>
+  <h3>Create anonymous lists to store movies</h3>
 </div>
 <div class="container-list">
   <div>
     <% @lists.each do |list| %>
-      <h2> <%= link_to list.name, list_path(list) %></h2>
+      <%= link_to list_path(list) do%>
+      <h2> <%= list.name %>  </h2>
+      <% end %>
     <% end%>
     <div class="btn-blackshadow">
       <%= link_to "Create a new list?", new_list_path %>

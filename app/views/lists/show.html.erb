@@ -1,4 +1,4 @@
-<h1><%= @list.name %></h1>
+<h1 class = "list-name"><%= @list.name %></h1>
 
 
 
@@ -12,15 +12,19 @@
             <%= link_to "Delete?", bookmark_path(bookmark), method: :delete, data: {confirm: "Are you sure you want to delete #{movie.title} from this list?"} %>
           </div>
       <div class="poster-image">
-        <%= image_tag movie.poster_url, alt: "poster", width: 300, height: 150 %>
+        <%= image_tag movie.poster_url, alt: "poster" %>
       </div>
       <div class="headline-card margin-card">
         <h4><%= movie.title %></h4>
         <p>Rating: <%= movie.rating %></p>
       </div>
-      <div class="overview-card margin-card">
-        <p><%= movie.overview%></p>
-        <p> <%= bookmark.comment%> </p>
+      <div class="overview-card margin-card card-display">
+        <% if movie.overview.split.length >= 50 %>
+          <p><%= movie.overview.split[0..50].join(" ")%> (...)</p>
+        <% else %>
+          <p><%= movie.overview%></p>
+        <% end %>
+        <p> <b>Comment:</b> <%= bookmark.comment%> </p>
       </div>
         <% end %>
 
