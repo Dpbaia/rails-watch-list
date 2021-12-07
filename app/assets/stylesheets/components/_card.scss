@@ -1,8 +1,8 @@
-$beige: #cfb08fe5;
-$blue: #36409D;
+$redish: #472D30;
+$blue: #6B73B3;
 $red: #5A2A27;
-$lilac: #a690a4;
-$grey: #5c574f;
+$orange: #D98324;
+$white: #F6F7EB;
 
 
 .container-postercards {
@@ -39,7 +39,7 @@ $grey: #5c574f;
 
 .container-postercards a:hover {
   box-shadow: none;
-  color: $grey;
+  color: $white;
 }
 
 
@@ -48,7 +48,7 @@ $grey: #5c574f;
   width: 300px;
   height: 400px;
   border-radius: 15px;
-  background-color: $beige;
+  background-color: $redish;
   box-shadow: 4px 4px 10px $red;
 
   &:hover {
@@ -69,8 +69,8 @@ $grey: #5c574f;
   filter: saturate(60%);
   filter: grayscale(70%);
   transition: 1s;
-  // border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
+  // border-top: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .margin-card {

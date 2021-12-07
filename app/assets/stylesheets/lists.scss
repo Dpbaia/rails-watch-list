@@ -7,7 +7,12 @@
 @import "components/banner";
 
 
-$beige: #FCD0A1;
+$redish: #472D30;
+$bluish: #6b73b3;
+
+body {
+  background-color: black;
+}
 
 h1 {
   font-family: 'Lora', serif;
@@ -20,14 +25,15 @@ h2 {
   font-family: 'Oxygen', serif;
   padding: 30px 20px;
   margin: 20px 50px ;
-  background-color: $beige;
+  background-color: $redish;
   color: white;
   box-shadow: 2px 2px 10px black;
 }
 
 a {
   text-decoration: none;
-  color: darkgray;
+  color: #F6F7EB;
+  transition: 0.5s;
   &:hover{
     text-decoration: none;
     color: black
@@ -44,10 +50,16 @@ h4 {
   h1{
     font-size: 8em;
   }
+  h3{
+    font-size: 3em;
+  }
 }
 
 @media screen and (min-width: 1400px) {
   h1{
     font-size: 8em;
+  }
+  h3{
+    font-size:3em;
   }
 }
